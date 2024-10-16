@@ -10,6 +10,7 @@ readme = "README.md"
 python = "^{{cookiecutter.min_python_version}}"
 click = "*"
 importlib-metadata = ">=8.2.0"
+pheval = "^0.4.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = {version = ">=8.3.2"}
@@ -28,6 +29,9 @@ myst-parser = {version = ">=0.18.1"}
 
 [tool.poetry.scripts]
 {{cookiecutter.project_name}} = "{{cookiecutter.__project_slug}}.cli:main"
+
+[tool.poetry.plugins."pheval.plugins"]
+{{cookiecutter.project_name}}_runner = "{{cookiecutter.__project_slug}}.runner:{{cookiecutter.runner_name}}"
 
 [tool.poetry-dynamic-versioning]
 enable = true
