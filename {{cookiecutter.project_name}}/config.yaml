@@ -1,0 +1,6 @@
+tool: {{cookiecutter.project_name}}
+tool_version: 0.0.0
+variant_analysis:
+gene_analysis:
+disease_analysis:
+tool_specific_configuration_options:
