@@ -1,0 +1,40 @@
+site_name: {{cookiecutter.project_name}}
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Night Mode
+    - scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Day Mode
+
+markdown_extensions:
+  - pymdownx.emoji
+  - pymdownx.tasklist
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight
+  - mkdocs-click
+
+plugins:
+  - search
+  - autorefs
+  - include_dir_to_nav
+  - mkdocstrings:
+      enable_inventory: true
+
+watch:
+  - src
+
+nav:
+  - "index.md"
+
+
+site_url: https://{{cookiecutter.github_org_name}}.github.io/{{cookiecutter.project_name}}/
+repo_url: https://github.com/{{cookiecutter.github_org_name}}/{{cookiecutter.project_name}}
+edit_uri: "edit/docs/docs/"

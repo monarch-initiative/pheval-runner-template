@@ -28,10 +28,10 @@ jobs:
         echo ${{ "{{" }} secrets.{{cookiecutter.github_token_for_doc_deployment}} {{ "}}" }} >> src/{{cookiecutter.__project_slug}}/token.txt
         mkdir gh-pages
         touch gh-pages/.nojekyll
-        cd docs/
-        poetry run sphinx-apidoc -o . ../src/{{ cookiecutter.__project_slug}}/ --ext-autodoc -f
-        poetry run sphinx-build -b html . _build
-        cp -r _build/* ../gh-pages/
+        python ./src/pheval/utils/docs_gen.py
+        export PYTHONPATH=$(pwd)
+        poetry run mkdocs build
+        mv site/* ./gh-pages/
 
     - name: Deploy documentation.
       if: ${{ "{{" }} github.event_name == 'push' {{ "}}" }}
@@ -40,4 +40,3 @@ jobs:
         branch: gh-pages
         force: true
         folder: gh-pages
-        token: ${{ "{{" }} secrets.{{cookiecutter.github_token_for_doc_deployment}} {{ "}}" }}
