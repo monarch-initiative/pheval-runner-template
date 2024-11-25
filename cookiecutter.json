@@ -5,7 +5,7 @@
     "project_description": "This is the project description.",
     "min_python_version": "3.9",
     "file_name": "main",
-    "runner_name": "PhEvalTemplateRunner",
+    "runner_name": "PhEvalToolRunner",
     "greeting_recipient": "World",
     "full_name": "Author 1",
     "email": "author@org.org",
