@@ -1,4 +1,5 @@
 """{{cookiecutter.project_name}} package."""
+
 import importlib_metadata
 
 try:

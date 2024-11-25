@@ -1,3 +1,5 @@
+"""Runner."""
+
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -6,6 +8,7 @@ from pheval.runners.runner import PhEvalRunner
 
 @dataclass
 class {{cookiecutter.runner_name}}(PhEvalRunner):
+    """Runner class implementation."""
 
     input_dir: Path
     testdata_dir: Path
@@ -15,13 +18,13 @@ class {{cookiecutter.runner_name}}(PhEvalRunner):
     version: str
 
     def prepare(self):
-        """prepare"""
+        """Prepare."""
         print("preparing")
 
     def run(self):
-        """run"""
+        """Run."""
         print("running")
 
     def post_process(self):
-        """post_process"""
+        """Post Process."""
         print("post processing")
