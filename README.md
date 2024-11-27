@@ -11,11 +11,12 @@ pip install cruft
 
 Next, create a project using the `pheval-runner-template`.
 ```
-https://github.com/yaseminbridges/pheval-runner-template.git
+cookiecutter https://github.com/yaseminbridges/pheval-runner-template.git
 ```
 
 This kickstarts an interactive session where you declare the following:
  - `project_name`: Name of the project. [defaults to: Project_X]
+ - `github_org_name`: Name of either the organisation or user. [defaults to: Org_X]
  - `project_description`: Description of the project. [defaults to: This is the project description.].
  - `file_name`: The name of the main python file. [defaults to: `main` for `main.py`]
  - `runner_name`: The name of the runner. [defaults to: PhEvalToolRunner]
@@ -71,15 +72,6 @@ pip install poetry
 ## Install dependencies
 ```
 poetry install
-```
-
-## Add `poetry-dynamic-versioning` as a plugin
-```
-poetry self add "poetry-dynamic-versioning[plugin]"
-```
-**Note**: If you are using a Linux system and the above doesn't work giving you the following error `Invalid PEP 440 version: ...`, you could alternatively run:
-```
-poetry add poetry-dynamic-versioning
 ```
 
 ## Set-up `pre-commit`
