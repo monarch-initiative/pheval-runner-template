@@ -36,11 +36,6 @@ griffe = "0.38.1"
 [tool.poetry.plugins."pheval.plugins"]
 {{cookiecutter.project_name}}_runner = "{{cookiecutter.__project_slug}}.runner:{{cookiecutter.runner_name}}"
 
-[tool.poetry-dynamic-versioning]
-enable = true
-vcs = "git"
-style = "pep440"
-
 [tool.black]
 line-length = 120
 target-version = ["py38", "py39", "py310"]
@@ -81,5 +76,5 @@ quiet-level = 3
 # ignore-words-list = ""
 
 [build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
-build-backend = "poetry_dynamic_versioning.backend"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
