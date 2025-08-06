@@ -10,12 +10,13 @@ readme = "README.md"
 python = "^{{cookiecutter.min_python_version}}"
 click = "*"
 importlib-metadata = ">=8.2.0"
-pheval = "^0.5.0"
+pheval = "^0.6.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = {version = ">=8.3.2"}
 tox = {version = ">=4.16.0"}
 pre-commit = {version = ">=3.3.3"}
+ruff = "^0.4.6"
 
 [tool.poetry.group.docs]
 optional = true
@@ -36,44 +37,42 @@ griffe = "0.38.1"
 [tool.poetry.plugins."pheval.plugins"]
 {{cookiecutter.project_name}}_runner = "{{cookiecutter.__project_slug}}.runner:{{cookiecutter.runner_name}}"
 
-[tool.black]
-line-length = 120
-target-version = ["py38", "py39", "py310"]
-
 [tool.ruff]
-lint.extend-ignore = [
-    "D211",  # `no-blank-line-before-class`
-    "D212",  # `multi-line-summary-first-line`
-    "D203",  # `blank-line-before-docstring`
-    ]
 line-length = 120
+target-version = "py311"
 
-# Allow autofix for all enabled rules (when `--fix`) is provided.
-lint.fixable = ["ALL"]
+src = ["src", "tests"]
+respect-gitignore = true
 
-# Select or ignore from https://beta.ruff.rs/docs/rules/
-lint.select = [
-    "B",  # bugbear
-    "D",  # pydocstyle
+[tool.ruff.lint]
+select = [
     "E",  # pycodestyle errors
-    "F",  # Pyflakes
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "B",  # flake8-bugbear
     "I",  # isort
+    "N",  # pep8-naming
     "S",  # flake8-bandit
-    "W",  # Warning
+    "C90",  # mccabe complexity
+    "PL",  # pylint
+    "RUF",  # Ruff-specific rules
+    "UP",  # pyupgrade
+    "NPY",  # NumPy-specific
 ]
-
-lint.unfixable = []
-target-version = "py310"
+ignore = [
+    "E203", "S311", "S101", "S106", "S404", "S108", "S307", "S603", "S607", "S608",
+    "B024", "B027", "N801", "N803", "N806", "N815", "E731", "C901", "B019", "PLR0913", "PLW0211"
+]
+fixable = ["ALL"]
+unfixable = ["B"]
 
 [tool.ruff.lint.mccabe]
-# Unlike Flake8, default to a complexity level of 10.
-max-complexity = 10
+max-complexity = 13
 
-[tool.codespell]
-skip = "*.po,*.ts,.git,pyproject.toml"
-count = ""
-quiet-level = 3
-# ignore-words-list = ""
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
 
 [build-system]
 requires = ["poetry-core"]
