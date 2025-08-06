@@ -1,5 +1,5 @@
 # PhEval Runner Project Template
-A [Cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) template for projects using [`MkDocs`](https://mkdocstrings.github.io) + [`tox`](https://tox.wiki/en/latest/index.html) + [`poetry`](https://python-poetry.org/docs/). This template was extended from [monarch-project-template](https://github.com/monarch-initiative/monarch-project-template) which was developed thanks to the [tutorials by the cookiecutter project](https://cookiecutter.readthedocs.io/en/stable/tutorials/index.html) along with the instructions provided in [HelloCookieCutter1](https://github.com/BruceEckel/HelloCookieCutter1/blob/master/Readme.rst) by Bruce Eckel. The `tox` configuration is partly accreditted to Charles Tapley Hoyt's [cookiecutter implementation](https://github.com/cthoyt/cookiecutter-snekpack/blob/main/%7B%7Bcookiecutter.package_name%7D%7D/tox.ini).
+A [Cookiecutter](https://cookiecutter.readthedocs.io/en/stable/) template for projects using [`MkDocs`](https://mkdocstrings.github.io) + [`tox`](https://tox.wiki/en/latest/index.html) + [`poetry`](https://python-poetry.org/docs/). This template was extended from [monarch-project-template](https://github.com/monarch-initiative/monarch-project-template) which was developed thanks to the [tutorials by the cookiecutter project](https://cookiecutter.readthedocs.io/en/stable/tutorials/index.html) along with the instructions provided in [HelloCookieCutter1](https://github.com/BruceEckel/HelloCookieCutter1/blob/master/Readme.rst) by Bruce Eckel.
 
 # Getting started
 
@@ -93,10 +93,7 @@ poetry run tox
 
 This should run all the bullets mentioned above under the `tox` configuration and ideally you should see the following at the end of the run:
 ```
-  coverage-clean: OK (0.20=setup[0.05]+cmd[0.15] seconds)
-  lint-fix: OK (0.40=setup[0.01]+cmd[0.30,0.09] seconds)
-  codespell-write: OK (0.20=setup[0.02]+cmd[0.18] seconds)
-  docstr-coverage: OK (0.29=setup[0.01]+cmd[0.28] seconds)
+  ruff: OK (0.29=setup[0.01]+cmd[0.28] seconds)
   py: OK (1.29=setup[0.01]+cmd[1.28] seconds)
   congratulations :) (2.55 seconds)
 ```
