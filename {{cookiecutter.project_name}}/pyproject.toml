@@ -12,7 +12,7 @@ requires-python = ">={{cookiecutter.min_python_version}}"
 dependencies = [
     "click",
     "importlib-metadata>=8.2.0",
-    "pheval>=0.6.0",
+    "pheval>=0.7.0",
 ]
 
 [dependency-groups]
