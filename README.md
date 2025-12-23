@@ -11,7 +11,7 @@ pip install cruft
 
 Next, create a project using the `pheval-runner-template`.
 ```
-cookiecutter https://github.com/yaseminbridges/pheval-runner-template.git
+cookiecutter https://github.com/monarch-initiative/pheval-runner-template.git
 ```
 
 This kickstarts an interactive session where you declare the following:
